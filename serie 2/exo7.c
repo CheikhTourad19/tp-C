@@ -17,7 +17,7 @@ int main()
         else
         {
             v = 1;
-        }
+                }
 
     } while (mois > 12 || jour > 31 || mois < 1 || jour < 1 || v == 0);
 
