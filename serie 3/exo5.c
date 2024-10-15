@@ -37,6 +37,10 @@ int main()
     k = 0;
     while (i < DB && j < DB && k < DA + DB)
     {
+        if (i >= DA)
+        {
+            C[k] = B[j];
+        }
         if (A[i] < B[j])
         {
             C[k] = A[i];
@@ -48,14 +52,10 @@ int main()
             j++;
         }
 
-        if (i >= DA)
-        {
-            C[k] = B[j];
-        }
         k++;
     }
-    i = 0;
-    for (i = 0; i < DA + DB; i++)
+    printf("\nLe tableau resultant :\n");
+    for (i = 0; i < k; i++)
     {
         printf("%d", C[i]);
     }
