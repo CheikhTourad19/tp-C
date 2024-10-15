@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 const int size = 10;
 
 int main()
@@ -60,8 +61,17 @@ int main()
             C[i][j] = 0;
             for (k = 0; k < N; k++)
             {
-                C[i][j] = C[i][j] + (A[i][k] * B[j][k]);
+                C[i][j] = C[i][j] + (A[i][k] * B[k][j]);
             }
+        }
+    }
+    printf("Voici le tableau produit \n");
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+
+            printf("l'element %d-%d = %d\n", i + 1, j + 1, C[i][j]);
         }
     }
 
