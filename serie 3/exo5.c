@@ -4,7 +4,7 @@ const int DA = 4, DB = 5;
 
 int main()
 {
-    int A[DA], B[DB], C[DA + DB], i, j;
+    int A[DA], B[DB], C[DA + DB], i, j, k;
     printf("veillez remplir le tableau A et B \n");
     for (i = 0; i < DB; i++)
     {
@@ -32,21 +32,32 @@ int main()
             printf("%d - %d----*", i + 1, B[i]);
         }
     }
+    i = 0;
+    j = 0;
+    k = 0;
+    while (i < DB && j < DB && k < DA + DB)
+    {
+        if (A[i] < B[j])
+        {
+            C[k] = A[i];
+            i++;
+        }
+        else
+        {
+            C[k] = B[j];
+            j++;
+        }
 
+        if (i >= DA)
+        {
+            C[k] = B[j];
+        }
+        k++;
+    }
+    i = 0;
     for (i = 0; i < DA + DB; i++)
     {
-
-        for (j = 0; i < DB; j++)
-        {
-            if (A[j] < B[i])
-            {
-                C[i] = A[j];
-            }
-            else
-            {
-                C[i] = B[i];
-            }
-        }
+        printf("%d", C[i]);
     }
 
     return 0;
